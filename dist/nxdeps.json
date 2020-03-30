@@ -463,7 +463,7 @@
             {
               "file": "apps/api/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1585581939285.3318
+              "mtime": 1585585564361.3723
             },
             {
               "file": "apps/api/src/app/app.service.spec.ts",
@@ -493,7 +493,7 @@
             {
               "file": "apps/api/src/main.ts",
               "ext": ".ts",
-              "mtime": 1585581939282.4907
+              "mtime": 1585591178193.458
             },
             {
               "file": "apps/api/tsconfig.app.json",
@@ -912,6 +912,11 @@
         {
           "type": "static",
           "source": "api",
+          "target": "@nestjs/serve-static"
+        },
+        {
+          "type": "static",
+          "source": "api",
           "target": "@nestjs/core"
         }
       ],
@@ -1001,8 +1006,241 @@
         "mtime": 1585581939286.3235
       }
     ],
-    "nx-app-e2e": [],
-    "nx-app": [],
-    "api": []
+    "nx-app-e2e": [
+      {
+        "file": "apps/nx-app-e2e/cypress.json",
+        "ext": ".json",
+        "mtime": 1585581939278.2607
+      },
+      {
+        "file": "apps/nx-app-e2e/src/fixtures/example.json",
+        "ext": ".json",
+        "mtime": 1585581939279.283
+      },
+      {
+        "file": "apps/nx-app-e2e/src/integration/app.spec.ts",
+        "ext": ".ts",
+        "mtime": 1585581939279.6343
+      },
+      {
+        "file": "apps/nx-app-e2e/src/plugins/index.js",
+        "ext": ".js",
+        "mtime": 1585581939279.9287
+      },
+      {
+        "file": "apps/nx-app-e2e/src/support/app.po.ts",
+        "ext": ".ts",
+        "mtime": 1585581939280.2732
+      },
+      {
+        "file": "apps/nx-app-e2e/src/support/commands.ts",
+        "ext": ".ts",
+        "mtime": 1585581939280.5085
+      },
+      {
+        "file": "apps/nx-app-e2e/src/support/index.ts",
+        "ext": ".ts",
+        "mtime": 1585581939280.7239
+      },
+      {
+        "file": "apps/nx-app-e2e/tsconfig.e2e.json",
+        "ext": ".json",
+        "mtime": 1585581939278.5798
+      },
+      {
+        "file": "apps/nx-app-e2e/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1585581939278.8052
+      },
+      {
+        "file": "apps/nx-app-e2e/tslint.json",
+        "ext": ".json",
+        "mtime": 1585581939277.9583
+      }
+    ],
+    "nx-app": [
+      {
+        "file": "apps/nx-app/browserslist",
+        "ext": "",
+        "mtime": 1585581939272.2056
+      },
+      {
+        "file": "apps/nx-app/jest.config.js",
+        "ext": ".js",
+        "mtime": 1585581939276.0527
+      },
+      {
+        "file": "apps/nx-app/proxy.conf.json",
+        "ext": ".json",
+        "mtime": 1585581939284.5938
+      },
+      {
+        "file": "apps/nx-app/src/app/app.component.css",
+        "ext": ".css",
+        "mtime": 1585581939275.063
+      },
+      {
+        "file": "apps/nx-app/src/app/app.component.html",
+        "ext": ".html",
+        "mtime": 1585581939275.2527
+      },
+      {
+        "file": "apps/nx-app/src/app/app.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1585581939275.4746
+      },
+      {
+        "file": "apps/nx-app/src/app/app.component.ts",
+        "ext": ".ts",
+        "mtime": 1585581939275.688
+      },
+      {
+        "file": "apps/nx-app/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1585581939274.6963
+      },
+      {
+        "file": "apps/nx-app/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1585581939273.7942
+      },
+      {
+        "file": "apps/nx-app/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1585581939274.1372
+      },
+      {
+        "file": "apps/nx-app/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1585581939274.3774
+      },
+      {
+        "file": "apps/nx-app/src/favicon.ico",
+        "ext": ".ico",
+        "mtime": 1585581939271.9539
+      },
+      {
+        "file": "apps/nx-app/src/index.html",
+        "ext": ".html",
+        "mtime": 1585581939272.8635
+      },
+      {
+        "file": "apps/nx-app/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1585581939273.0864
+      },
+      {
+        "file": "apps/nx-app/src/polyfills.ts",
+        "ext": ".ts",
+        "mtime": 1585581939273.3054
+      },
+      {
+        "file": "apps/nx-app/src/styles.css",
+        "ext": ".css",
+        "mtime": 1585581939273.5376
+      },
+      {
+        "file": "apps/nx-app/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1585581939276.8145
+      },
+      {
+        "file": "apps/nx-app/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1585581939272.42
+      },
+      {
+        "file": "apps/nx-app/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1585581939271.5493
+      },
+      {
+        "file": "apps/nx-app/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1585581939275.8733
+      },
+      {
+        "file": "apps/nx-app/tslint.json",
+        "ext": ".json",
+        "mtime": 1585581939272.641
+      }
+    ],
+    "api": [
+      {
+        "file": "apps/api/jest.config.js",
+        "ext": ".js",
+        "mtime": 1585581939284.3906
+      },
+      {
+        "file": "apps/api/src/app/.gitkeep",
+        "ext": "",
+        "mtime": 1585581939282.848
+      },
+      {
+        "file": "apps/api/src/app/app.controller.spec.ts",
+        "ext": ".ts",
+        "mtime": 1585581939284.8093
+      },
+      {
+        "file": "apps/api/src/app/app.controller.ts",
+        "ext": ".ts",
+        "mtime": 1585581939285.0994
+      },
+      {
+        "file": "apps/api/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1585585564361.3723
+      },
+      {
+        "file": "apps/api/src/app/app.service.spec.ts",
+        "ext": ".ts",
+        "mtime": 1585581939285.5852
+      },
+      {
+        "file": "apps/api/src/app/app.service.ts",
+        "ext": ".ts",
+        "mtime": 1585581939285.9058
+      },
+      {
+        "file": "apps/api/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1585581939283.0962
+      },
+      {
+        "file": "apps/api/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1585581939283.4531
+      },
+      {
+        "file": "apps/api/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1585581939283.6963
+      },
+      {
+        "file": "apps/api/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1585591178193.458
+      },
+      {
+        "file": "apps/api/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1585581939281.2727
+      },
+      {
+        "file": "apps/api/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1585581939282.0598
+      },
+      {
+        "file": "apps/api/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1585581939284.1262
+      },
+      {
+        "file": "apps/api/tslint.json",
+        "ext": ".json",
+        "mtime": 1585581939281.0364
+      }
+    ]
   }
 }
