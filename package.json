@@ -5,8 +5,7 @@
   "scripts": {
     "ng": "ng",
     "nx": "nx",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node dist/apps/api/main",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
@@ -29,7 +28,6 @@
   },
   "private": true,
   "dependencies": {
-    "@nrwl/angular": "9.1.4",
     "@angular/animations": "9.0.0",
     "@angular/common": "9.0.0",
     "@angular/compiler": "9.0.0",
@@ -38,13 +36,15 @@
     "@angular/platform-browser": "9.0.0",
     "@angular/platform-browser-dynamic": "9.0.0",
     "@angular/router": "9.0.0",
-    "core-js": "^2.5.4",
-    "rxjs": "~6.5.0",
-    "zone.js": "^0.10.2",
     "@nestjs/common": "^6.8.3",
     "@nestjs/core": "^6.8.3",
     "@nestjs/platform-express": "^6.8.3",
-    "reflect-metadata": "^0.1.13"
+    "@nestjs/serve-static": "^2.1.0",
+    "@nrwl/angular": "9.1.4",
+    "core-js": "^2.5.4",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "~6.5.0",
+    "zone.js": "^0.10.2"
   },
   "devDependencies": {
     "@angular/cli": "9.0.1",

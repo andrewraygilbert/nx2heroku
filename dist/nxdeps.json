@@ -1,0 +1,1008 @@
+{
+  "projectGraph": {
+    "nodes": {
+      "api-interfaces": {
+        "name": "api-interfaces",
+        "type": "lib",
+        "data": {
+          "root": "libs/api-interfaces",
+          "sourceRoot": "libs/api-interfaces/src",
+          "projectType": "library",
+          "schematics": {},
+          "architect": {
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "libs/api-interfaces/tsconfig.lib.json",
+                  "libs/api-interfaces/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!libs/api-interfaces/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "libs/api-interfaces/jest.config.js",
+                "tsConfig": "libs/api-interfaces/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "libs/api-interfaces/README.md",
+              "ext": ".md",
+              "mtime": 1585581939286.5505
+            },
+            {
+              "file": "libs/api-interfaces/jest.config.js",
+              "ext": ".js",
+              "mtime": 1585581939288.4514
+            },
+            {
+              "file": "libs/api-interfaces/src/index.ts",
+              "ext": ".ts",
+              "mtime": 1585581939287.3145
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/api-interfaces.ts",
+              "ext": ".ts",
+              "mtime": 1585581939287.6797
+            },
+            {
+              "file": "libs/api-interfaces/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1585581939286.7454
+            },
+            {
+              "file": "libs/api-interfaces/tsconfig.lib.json",
+              "ext": ".json",
+              "mtime": 1585581939286.9426
+            },
+            {
+              "file": "libs/api-interfaces/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1585581939288.1995
+            },
+            {
+              "file": "libs/api-interfaces/tslint.json",
+              "ext": ".json",
+              "mtime": 1585581939286.3235
+            }
+          ]
+        }
+      },
+      "nx-app-e2e": {
+        "name": "nx-app-e2e",
+        "type": "e2e",
+        "data": {
+          "root": "apps/nx-app-e2e",
+          "sourceRoot": "apps/nx-app-e2e/src",
+          "projectType": "application",
+          "architect": {
+            "e2e": {
+              "builder": "@nrwl/cypress:cypress",
+              "options": {
+                "cypressConfig": "apps/nx-app-e2e/cypress.json",
+                "tsConfig": "apps/nx-app-e2e/tsconfig.e2e.json",
+                "devServerTarget": "nx-app:serve"
+              },
+              "configurations": {
+                "production": {
+                  "devServerTarget": "nx-app:serve:production"
+                }
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/nx-app-e2e/tsconfig.e2e.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/nx-app-e2e/**"
+                ]
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/nx-app-e2e/cypress.json",
+              "ext": ".json",
+              "mtime": 1585581939278.2607
+            },
+            {
+              "file": "apps/nx-app-e2e/src/fixtures/example.json",
+              "ext": ".json",
+              "mtime": 1585581939279.283
+            },
+            {
+              "file": "apps/nx-app-e2e/src/integration/app.spec.ts",
+              "ext": ".ts",
+              "mtime": 1585581939279.6343
+            },
+            {
+              "file": "apps/nx-app-e2e/src/plugins/index.js",
+              "ext": ".js",
+              "mtime": 1585581939279.9287
+            },
+            {
+              "file": "apps/nx-app-e2e/src/support/app.po.ts",
+              "ext": ".ts",
+              "mtime": 1585581939280.2732
+            },
+            {
+              "file": "apps/nx-app-e2e/src/support/commands.ts",
+              "ext": ".ts",
+              "mtime": 1585581939280.5085
+            },
+            {
+              "file": "apps/nx-app-e2e/src/support/index.ts",
+              "ext": ".ts",
+              "mtime": 1585581939280.7239
+            },
+            {
+              "file": "apps/nx-app-e2e/tsconfig.e2e.json",
+              "ext": ".json",
+              "mtime": 1585581939278.5798
+            },
+            {
+              "file": "apps/nx-app-e2e/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1585581939278.8052
+            },
+            {
+              "file": "apps/nx-app-e2e/tslint.json",
+              "ext": ".json",
+              "mtime": 1585581939277.9583
+            }
+          ]
+        }
+      },
+      "nx-app": {
+        "name": "nx-app",
+        "type": "app",
+        "data": {
+          "projectType": "application",
+          "schematics": {},
+          "root": "apps/nx-app",
+          "sourceRoot": "apps/nx-app/src",
+          "prefix": "nx2heroku",
+          "architect": {
+            "build": {
+              "builder": "@angular-devkit/build-angular:browser",
+              "options": {
+                "outputPath": "dist/apps/nx-app",
+                "index": "apps/nx-app/src/index.html",
+                "main": "apps/nx-app/src/main.ts",
+                "polyfills": "apps/nx-app/src/polyfills.ts",
+                "tsConfig": "apps/nx-app/tsconfig.app.json",
+                "aot": true,
+                "assets": [
+                  "apps/nx-app/src/favicon.ico",
+                  "apps/nx-app/src/assets"
+                ],
+                "styles": [
+                  "apps/nx-app/src/styles.css"
+                ],
+                "scripts": []
+              },
+              "configurations": {
+                "production": {
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/nx-app/src/environments/environment.ts",
+                      "with": "apps/nx-app/src/environments/environment.prod.ts"
+                    }
+                  ],
+                  "optimization": true,
+                  "outputHashing": "all",
+                  "sourceMap": false,
+                  "extractCss": true,
+                  "namedChunks": false,
+                  "extractLicenses": true,
+                  "vendorChunk": false,
+                  "buildOptimizer": true,
+                  "budgets": [
+                    {
+                      "type": "initial",
+                      "maximumWarning": "2mb",
+                      "maximumError": "5mb"
+                    },
+                    {
+                      "type": "anyComponentStyle",
+                      "maximumWarning": "6kb",
+                      "maximumError": "10kb"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@angular-devkit/build-angular:dev-server",
+              "options": {
+                "browserTarget": "nx-app:build",
+                "proxyConfig": "apps/nx-app/proxy.conf.json"
+              },
+              "configurations": {
+                "production": {
+                  "browserTarget": "nx-app:build:production"
+                }
+              }
+            },
+            "extract-i18n": {
+              "builder": "@angular-devkit/build-angular:extract-i18n",
+              "options": {
+                "browserTarget": "nx-app:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/nx-app/tsconfig.app.json",
+                  "apps/nx-app/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/nx-app/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/nx-app/jest.config.js",
+                "tsConfig": "apps/nx-app/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "apps/nx-app/src/test-setup.ts"
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/nx-app/browserslist",
+              "ext": "",
+              "mtime": 1585581939272.2056
+            },
+            {
+              "file": "apps/nx-app/jest.config.js",
+              "ext": ".js",
+              "mtime": 1585581939276.0527
+            },
+            {
+              "file": "apps/nx-app/proxy.conf.json",
+              "ext": ".json",
+              "mtime": 1585581939284.5938
+            },
+            {
+              "file": "apps/nx-app/src/app/app.component.css",
+              "ext": ".css",
+              "mtime": 1585581939275.063
+            },
+            {
+              "file": "apps/nx-app/src/app/app.component.html",
+              "ext": ".html",
+              "mtime": 1585581939275.2527
+            },
+            {
+              "file": "apps/nx-app/src/app/app.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1585581939275.4746
+            },
+            {
+              "file": "apps/nx-app/src/app/app.component.ts",
+              "ext": ".ts",
+              "mtime": 1585581939275.688
+            },
+            {
+              "file": "apps/nx-app/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1585581939274.6963
+            },
+            {
+              "file": "apps/nx-app/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1585581939273.7942
+            },
+            {
+              "file": "apps/nx-app/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1585581939274.1372
+            },
+            {
+              "file": "apps/nx-app/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1585581939274.3774
+            },
+            {
+              "file": "apps/nx-app/src/favicon.ico",
+              "ext": ".ico",
+              "mtime": 1585581939271.9539
+            },
+            {
+              "file": "apps/nx-app/src/index.html",
+              "ext": ".html",
+              "mtime": 1585581939272.8635
+            },
+            {
+              "file": "apps/nx-app/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1585581939273.0864
+            },
+            {
+              "file": "apps/nx-app/src/polyfills.ts",
+              "ext": ".ts",
+              "mtime": 1585581939273.3054
+            },
+            {
+              "file": "apps/nx-app/src/styles.css",
+              "ext": ".css",
+              "mtime": 1585581939273.5376
+            },
+            {
+              "file": "apps/nx-app/src/test-setup.ts",
+              "ext": ".ts",
+              "mtime": 1585581939276.8145
+            },
+            {
+              "file": "apps/nx-app/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1585581939272.42
+            },
+            {
+              "file": "apps/nx-app/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1585581939271.5493
+            },
+            {
+              "file": "apps/nx-app/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1585581939275.8733
+            },
+            {
+              "file": "apps/nx-app/tslint.json",
+              "ext": ".json",
+              "mtime": 1585581939272.641
+            }
+          ]
+        }
+      },
+      "api": {
+        "name": "api",
+        "type": "app",
+        "data": {
+          "root": "apps/api",
+          "sourceRoot": "apps/api/src",
+          "projectType": "application",
+          "prefix": "api",
+          "schematics": {},
+          "architect": {
+            "build": {
+              "builder": "@nrwl/node:build",
+              "options": {
+                "outputPath": "dist/apps/api",
+                "main": "apps/api/src/main.ts",
+                "tsConfig": "apps/api/tsconfig.app.json",
+                "assets": [
+                  "apps/api/src/assets"
+                ]
+              },
+              "configurations": {
+                "production": {
+                  "optimization": true,
+                  "extractLicenses": true,
+                  "inspect": false,
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/api/src/environments/environment.ts",
+                      "with": "apps/api/src/environments/environment.prod.ts"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@nrwl/node:execute",
+              "options": {
+                "buildTarget": "api:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/api/tsconfig.app.json",
+                  "apps/api/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/api/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/api/jest.config.js",
+                "tsConfig": "apps/api/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/api/jest.config.js",
+              "ext": ".js",
+              "mtime": 1585581939284.3906
+            },
+            {
+              "file": "apps/api/src/app/.gitkeep",
+              "ext": "",
+              "mtime": 1585581939282.848
+            },
+            {
+              "file": "apps/api/src/app/app.controller.spec.ts",
+              "ext": ".ts",
+              "mtime": 1585581939284.8093
+            },
+            {
+              "file": "apps/api/src/app/app.controller.ts",
+              "ext": ".ts",
+              "mtime": 1585581939285.0994
+            },
+            {
+              "file": "apps/api/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1585581939285.3318
+            },
+            {
+              "file": "apps/api/src/app/app.service.spec.ts",
+              "ext": ".ts",
+              "mtime": 1585581939285.5852
+            },
+            {
+              "file": "apps/api/src/app/app.service.ts",
+              "ext": ".ts",
+              "mtime": 1585581939285.9058
+            },
+            {
+              "file": "apps/api/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1585581939283.0962
+            },
+            {
+              "file": "apps/api/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1585581939283.4531
+            },
+            {
+              "file": "apps/api/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1585581939283.6963
+            },
+            {
+              "file": "apps/api/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1585581939282.4907
+            },
+            {
+              "file": "apps/api/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1585581939281.2727
+            },
+            {
+              "file": "apps/api/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1585581939282.0598
+            },
+            {
+              "file": "apps/api/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1585581939284.1262
+            },
+            {
+              "file": "apps/api/tslint.json",
+              "ext": ".json",
+              "mtime": 1585581939281.0364
+            }
+          ]
+        }
+      },
+      "@nrwl/angular": {
+        "type": "npm",
+        "name": "@nrwl/angular",
+        "data": {
+          "version": "9.1.4",
+          "files": []
+        }
+      },
+      "@angular/animations": {
+        "type": "npm",
+        "name": "@angular/animations",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@angular/common": {
+        "type": "npm",
+        "name": "@angular/common",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@angular/compiler": {
+        "type": "npm",
+        "name": "@angular/compiler",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@angular/core": {
+        "type": "npm",
+        "name": "@angular/core",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@angular/forms": {
+        "type": "npm",
+        "name": "@angular/forms",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@angular/platform-browser": {
+        "type": "npm",
+        "name": "@angular/platform-browser",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@angular/platform-browser-dynamic": {
+        "type": "npm",
+        "name": "@angular/platform-browser-dynamic",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@angular/router": {
+        "type": "npm",
+        "name": "@angular/router",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "core-js": {
+        "type": "npm",
+        "name": "core-js",
+        "data": {
+          "version": "^2.5.4",
+          "files": []
+        }
+      },
+      "rxjs": {
+        "type": "npm",
+        "name": "rxjs",
+        "data": {
+          "version": "~6.5.0",
+          "files": []
+        }
+      },
+      "zone.js": {
+        "type": "npm",
+        "name": "zone.js",
+        "data": {
+          "version": "^0.10.2",
+          "files": []
+        }
+      },
+      "@nestjs/common": {
+        "type": "npm",
+        "name": "@nestjs/common",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "@nestjs/core": {
+        "type": "npm",
+        "name": "@nestjs/core",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "@nestjs/platform-express": {
+        "type": "npm",
+        "name": "@nestjs/platform-express",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "reflect-metadata": {
+        "type": "npm",
+        "name": "reflect-metadata",
+        "data": {
+          "version": "^0.1.13",
+          "files": []
+        }
+      },
+      "@angular/cli": {
+        "type": "npm",
+        "name": "@angular/cli",
+        "data": {
+          "version": "9.0.1",
+          "files": []
+        }
+      },
+      "@nrwl/workspace": {
+        "type": "npm",
+        "name": "@nrwl/workspace",
+        "data": {
+          "version": "9.1.4",
+          "files": []
+        }
+      },
+      "@types/node": {
+        "type": "npm",
+        "name": "@types/node",
+        "data": {
+          "version": "~8.9.4",
+          "files": []
+        }
+      },
+      "dotenv": {
+        "type": "npm",
+        "name": "dotenv",
+        "data": {
+          "version": "6.2.0",
+          "files": []
+        }
+      },
+      "ts-node": {
+        "type": "npm",
+        "name": "ts-node",
+        "data": {
+          "version": "~7.0.0",
+          "files": []
+        }
+      },
+      "tslint": {
+        "type": "npm",
+        "name": "tslint",
+        "data": {
+          "version": "~6.0.0",
+          "files": []
+        }
+      },
+      "eslint": {
+        "type": "npm",
+        "name": "eslint",
+        "data": {
+          "version": "6.8.0",
+          "files": []
+        }
+      },
+      "typescript": {
+        "type": "npm",
+        "name": "typescript",
+        "data": {
+          "version": "~3.7.4",
+          "files": []
+        }
+      },
+      "prettier": {
+        "type": "npm",
+        "name": "prettier",
+        "data": {
+          "version": "1.19.1",
+          "files": []
+        }
+      },
+      "@nrwl/nest": {
+        "type": "npm",
+        "name": "@nrwl/nest",
+        "data": {
+          "version": "9.1.4",
+          "files": []
+        }
+      },
+      "@angular/compiler-cli": {
+        "type": "npm",
+        "name": "@angular/compiler-cli",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@angular/language-service": {
+        "type": "npm",
+        "name": "@angular/language-service",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@angular-devkit/build-angular": {
+        "type": "npm",
+        "name": "@angular-devkit/build-angular",
+        "data": {
+          "version": "0.900.1",
+          "files": []
+        }
+      },
+      "codelyzer": {
+        "type": "npm",
+        "name": "codelyzer",
+        "data": {
+          "version": "~5.0.1",
+          "files": []
+        }
+      },
+      "jest-preset-angular": {
+        "type": "npm",
+        "name": "jest-preset-angular",
+        "data": {
+          "version": "8.0.0",
+          "files": []
+        }
+      },
+      "@nrwl/jest": {
+        "type": "npm",
+        "name": "@nrwl/jest",
+        "data": {
+          "version": "9.1.4",
+          "files": []
+        }
+      },
+      "jest": {
+        "type": "npm",
+        "name": "jest",
+        "data": {
+          "version": "24.9.0",
+          "files": []
+        }
+      },
+      "@types/jest": {
+        "type": "npm",
+        "name": "@types/jest",
+        "data": {
+          "version": "24.9.1",
+          "files": []
+        }
+      },
+      "ts-jest": {
+        "type": "npm",
+        "name": "ts-jest",
+        "data": {
+          "version": "24.0.0",
+          "files": []
+        }
+      },
+      "cypress": {
+        "type": "npm",
+        "name": "cypress",
+        "data": {
+          "version": "^4.1.0",
+          "files": []
+        }
+      },
+      "@nrwl/cypress": {
+        "type": "npm",
+        "name": "@nrwl/cypress",
+        "data": {
+          "version": "9.1.4",
+          "files": []
+        }
+      },
+      "@nrwl/node": {
+        "type": "npm",
+        "name": "@nrwl/node",
+        "data": {
+          "version": "9.1.4",
+          "files": []
+        }
+      },
+      "@nestjs/schematics": {
+        "type": "npm",
+        "name": "@nestjs/schematics",
+        "data": {
+          "version": "^6.7.0",
+          "files": []
+        }
+      },
+      "@nestjs/testing": {
+        "type": "npm",
+        "name": "@nestjs/testing",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "@nestjs/serve-static": {
+        "type": "npm",
+        "name": "@nestjs/serve-static",
+        "data": {
+          "version": "^2.1.0",
+          "files": []
+        }
+      }
+    },
+    "dependencies": {
+      "api-interfaces": [],
+      "nx-app-e2e": [
+        {
+          "type": "implicit",
+          "source": "nx-app-e2e",
+          "target": "nx-app"
+        }
+      ],
+      "nx-app": [
+        {
+          "type": "static",
+          "source": "nx-app",
+          "target": "api-interfaces"
+        },
+        {
+          "type": "static",
+          "source": "nx-app",
+          "target": "@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "nx-app",
+          "target": "@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "nx-app",
+          "target": "@angular/platform-browser"
+        },
+        {
+          "type": "static",
+          "source": "nx-app",
+          "target": "@angular/platform-browser-dynamic"
+        },
+        {
+          "type": "static",
+          "source": "nx-app",
+          "target": "zone.js"
+        },
+        {
+          "type": "static",
+          "source": "nx-app",
+          "target": "jest-preset-angular"
+        }
+      ],
+      "api": [
+        {
+          "type": "static",
+          "source": "api",
+          "target": "api-interfaces"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/testing"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/common"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/core"
+        }
+      ],
+      "@nrwl/angular": [],
+      "@angular/animations": [],
+      "@angular/common": [],
+      "@angular/compiler": [],
+      "@angular/core": [],
+      "@angular/forms": [],
+      "@angular/platform-browser": [],
+      "@angular/platform-browser-dynamic": [],
+      "@angular/router": [],
+      "core-js": [],
+      "rxjs": [],
+      "zone.js": [],
+      "@nestjs/common": [],
+      "@nestjs/core": [],
+      "@nestjs/platform-express": [],
+      "reflect-metadata": [],
+      "@angular/cli": [],
+      "@nrwl/workspace": [],
+      "@types/node": [],
+      "dotenv": [],
+      "ts-node": [],
+      "tslint": [],
+      "eslint": [],
+      "typescript": [],
+      "prettier": [],
+      "@nrwl/nest": [],
+      "@angular/compiler-cli": [],
+      "@angular/language-service": [],
+      "@angular-devkit/build-angular": [],
+      "codelyzer": [],
+      "jest-preset-angular": [],
+      "@nrwl/jest": [],
+      "jest": [],
+      "@types/jest": [],
+      "ts-jest": [],
+      "cypress": [],
+      "@nrwl/cypress": [],
+      "@nrwl/node": [],
+      "@nestjs/schematics": [],
+      "@nestjs/testing": [],
+      "@nestjs/serve-static": []
+    }
+  },
+  "fileMap": {
+    "api-interfaces": [
+      {
+        "file": "libs/api-interfaces/README.md",
+        "ext": ".md",
+        "mtime": 1585581939286.5505
+      },
+      {
+        "file": "libs/api-interfaces/jest.config.js",
+        "ext": ".js",
+        "mtime": 1585581939288.4514
+      },
+      {
+        "file": "libs/api-interfaces/src/index.ts",
+        "ext": ".ts",
+        "mtime": 1585581939287.3145
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/api-interfaces.ts",
+        "ext": ".ts",
+        "mtime": 1585581939287.6797
+      },
+      {
+        "file": "libs/api-interfaces/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1585581939286.7454
+      },
+      {
+        "file": "libs/api-interfaces/tsconfig.lib.json",
+        "ext": ".json",
+        "mtime": 1585581939286.9426
+      },
+      {
+        "file": "libs/api-interfaces/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1585581939288.1995
+      },
+      {
+        "file": "libs/api-interfaces/tslint.json",
+        "ext": ".json",
+        "mtime": 1585581939286.3235
+      }
+    ],
+    "nx-app-e2e": [],
+    "nx-app": [],
+    "api": []
+  }
+}
