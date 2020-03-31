@@ -3,3 +3,4 @@
 
 This repository contains an Nx workspace that was configured to deploy to Heroku.
 
+Read the corresponding article on [Medium](https://medium.com/@andrew.ray.gilbert/deploy-an-nx-workspace-to-heroku-c0b8ba0e6fe9).
